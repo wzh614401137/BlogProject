@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  
+    <main>
+        <div class="main-inner">
+            <section class="register-section">
+                <h2>Register</h2>
+                <form action="/register/process" method="post">
+                    <div class="register-section-details">
+                        <div class="form-group">
+                            <label for="adminName">UserName</label>
+                            <input type="text" name="adminName" value="" id="adminName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="adminEmail">UserEmail</label>
+                            <input type="text" name="adminEmail" value="" id="adminEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" value="" id="password" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="register-btn">Register</button>       
+                </form>
+            </section>
+        </div>
+    </main>
+
+</body>
+
+</html>
