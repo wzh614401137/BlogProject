@@ -6,17 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/register_reset.css}">
+    <link rel="stylesheet" th:href="@{/css/register_style.css}">
 </head>
 
 <body>
-  
     <main>
         <div class="main-inner">
             <section class="register-section">
                 <h2>Register</h2>
-                <form action="/register/process" method="post">
+                <form th:action="@{/account/register/process}" method="post">
                     <div class="register-section-details">
                         <div class="form-group">
                             <label for="adminName">UserName</label>
@@ -36,7 +35,6 @@
             </section>
         </div>
     </main>
-
 </body>
 
 </html>
