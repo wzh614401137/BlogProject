@@ -17,7 +17,7 @@
         </div>
         
         <div class="login-form">
-            <form action="/login/process" method="post">
+            <form th:action="@{/account/login/process}" method="post">
                 <div class="form-group">
                     <label for="adminEmail">UserEmail</label>
                     <input type="text" id="adminEmail" name="adminEmail" placeholder="Enter your email">

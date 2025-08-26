@@ -39,7 +39,7 @@ public class Blog {
 		this.article = article;
 		this.accountId = accountId;
 	}
-	//getter setter 
+	// getter setter
 
 	public Long getBlogId() {
 		return blogId;
@@ -88,6 +88,5 @@ public class Blog {
 	public void setAccountId(Long accountId) {
 		this.accountId = accountId;
 	}
-	
 
 }

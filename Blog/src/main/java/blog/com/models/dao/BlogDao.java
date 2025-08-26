@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import blog.com.models.entity.Blog;
 import jakarta.transaction.Transactional;
 
-
 @Repository // データベースに関するメソッドを提供するDao層のinterfaceであることをspingに伝える
 @Transactional // スライド安全
 public interface BlogDao extends JpaRepository<Blog, Long> {
@@ -28,7 +27,7 @@ public interface BlogDao extends JpaRepository<Blog, Long> {
 	Blog findByBlogId(Long blogId);
 
 	// DLETE FROM blog WHERE blog_id = ?
-	// 用途：削除  ！！！@Transactional が宣言必要です
+	// 用途：削除 ！！！@Transactional が宣言必要です
 	void deleteByBlogId(Long productId);
-	
+
 }
