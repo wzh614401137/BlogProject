@@ -38,4 +38,47 @@ public class HPService {
 
 	}
 
+	// 編集画面を表示するときのチェック
+	// もし、blogId == null return null
+	// そうでない場合、
+	// findByBlogIdの情報をコントローラークラスに渡す
+	public Blog blogEditCheck(Long blogId) {
+		if (blogId == null) {
+			return null;
+		} else {
+			return blogDao.findByBlogId(blogId);
+		}
+	}
+
+	// 更新処理のチェック
+	//もし、productId==nullだったら、更新処理しない
+	//false
+	//そうでない場合、更新処理する
+	//コントローラークラスからもらった、productIdを使って、編集する前んのデータを取得
+	//変更すべきところだけ、セッターを使用してデータの更新をする
+	//trueを返す
+	public boolean blogUpdate(Long blogId,
+			String blogTitle,
+			String categoryName,
+			String blogImage,
+			String article,
+			Long accountId) {
+		if(blogId == null) {
+			return false;
+		}else {
+			Blog blog = blogDao.findByBlogId(blogId);//blogIdが一致したら、データを取ってくる
+			blog.setBlogTitle(blogTitle);
+			blog.setCategoryName(categoryName);
+			blog.setBlogImage(blogImage);
+			blog.setArticle(article);
+			blog.setAccountId(accountId);
+			blogDao.save(blog);
+			return true;
+		}
+		
+	}
+	
+	
+	
+	
 }

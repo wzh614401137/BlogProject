@@ -32,7 +32,7 @@ public class Blog {
 	}
 
 	// コンストラクタ
-	public Blog(String blogTitle, String categoryName, String blogImage, String article, Long caaountId) {
+	public Blog(String blogTitle, String categoryName, String blogImage, String article, Long accountId) {
 		this.blogTitle = blogTitle;
 		this.categoryName = categoryName;
 		this.blogImage = blogImage;

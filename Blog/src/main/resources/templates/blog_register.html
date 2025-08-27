@@ -19,7 +19,7 @@
 					<a href=""><img th:src="@{/images/logo.png}" alt="Logo"></a>
 				</div>
 				<ul class="pc-list">
-					<li class="pc-list__item" th:text="{acountName}"></li>
+					<li class="pc-list__item" th:text="${acountName}"></li>
 					<li class="pc-list__item"><a th:href="@{/blog/register}">Blog register</a></li>
 					<li class="pc-list__item"><a th:href="@{/account/logout}">ログアウト</a></li>
 				</ul>
@@ -47,9 +47,9 @@
 							<div>カテゴリー</div>
 							<select name="categoryName" required>
 								<option value="">選択してください</option>
-								<option value="シャープペン">シャープペン</option>
-								<option value="消しゴム">消しゴム</option>
-								<option value="鉛筆">鉛筆</option>
+								<option value="旅行">旅行</option>
+								<option value="料理">料理</option>
+								<option value="出来事">出来事</option>
 							</select>
 						</div>
 						<div class="register-section-details_flex">

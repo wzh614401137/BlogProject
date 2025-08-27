@@ -1,6 +1,8 @@
 package blog.com.controllers;
 
+import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -44,8 +46,10 @@ public class BlogRegisterController {
 
 	// 記事の登録処理
 	@PostMapping("/blog/register/process")
-	public String blogRegisterProcess(@RequestParam String blogTitle, @RequestParam String categoryName,
-			@RequestParam MultipartFile blogImage, @RequestParam String article) {
+	public String blogRegisterProcess(@RequestParam String blogTitle, 
+			@RequestParam String categoryName,
+			@RequestParam MultipartFile blogImage, 
+			@RequestParam String article) {
 		// セッションからログインしている人の情報をaccountという変数に格納
 		Account account = (Account) session.getAttribute("loginAdminInfo");
 
@@ -67,7 +71,16 @@ public class BlogRegisterController {
 					+ blogImage.getOriginalFilename();
 			
 			//ファイルの保存作業
-			Files.copy(blogImage.getInputStream(), null)
+			try {
+				Files.copy(blogImage.getInputStream(), Path.of("src/main/resources/static/blog_img/" + fileName));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			if(hpservice.createBlog(blogTitle, categoryName, fileName, article, account.getAccountId())) {
+				return "redirect:/blog/hp";
+			}else {
+				return "blog_register.html";
+			}
 			
 		}
 			

@@ -33,13 +33,13 @@
 			<h2>記事一覧</h2>
 			<section class="register-item">
 				<div class="all-view-register__button">
-					<a th:href="@{/product/register}" class="btn btn--red btn--radius">記事登録</a>
+					<a th:href="@{/blog/register}" class="btn btn--red btn--radius">記事登録</a>
 				</div>
 			</section>
 			<ul class="products">
 				<li th:each="blog:${Bloglist}">
 					<a th:href="@{/blog/edit/{blogId}(blogId=${blog.blogId})}">
-						<img th:src="@{/blog-img/{imagePath}(imagePath=${blog.blogImage})}" alt="">
+						<img th:src="@{/blog_img/{imagePath}(imagePath=${blog.blogImage})}" alt="">
 						<p th:text="${blog.blogTitle}"></p><br>
 						<p th:text="${blog.categoryName}"></p>
 					</a>
