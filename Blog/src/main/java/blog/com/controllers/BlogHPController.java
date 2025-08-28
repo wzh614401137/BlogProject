@@ -34,7 +34,8 @@ public class BlogHPController {
 		} else {
 			// 商品の情報を取得
 			List<Blog> Bloglist = hpService.selectAllBlog(account.getAccountId());// accountの情報をserviceクラスに渡して
-			model.addAttribute("accountName", account.getAccountEmail());    //页面要展示什么，就通过 model.addAttribute("xxx", xxx) 传到前端去。
+			model.addAttribute("accountName", account.getAccountEmail()); // 页面要展示什么，就通过 model.addAttribute("xxx", xxx)
+																			// 传到前端去。
 			model.addAttribute("Bloglist", Bloglist);// (key,value)(frontEnd,backEnd)
 			return "blog_hp.html";
 		}

@@ -74,7 +74,7 @@ public class BlogEditController {
 			String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date())
 					+ blogImage.getOriginalFilename();
 			try {
-				Files.copy(blogImage.getInputStream(), Path.of("src/main/resources/static/product_img/" + fileName));
+				Files.copy(blogImage.getInputStream(), Path.of("src/main/resources/static/blog_img/" + fileName));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

@@ -26,6 +26,10 @@
 					<li class="pc-list__item"><a th:href="@{/account/logout}">ログアウト</a></li>
 				</ul>
 			</div>
+			<form action="/blog/search" method="get">
+			    <input type="text" name="keyword" placeholder="キーワードを入力">
+			    <button type="submit" class="btn btn--red btn--radius">検索</button>
+			</form>
 		</nav>
 	</header>
 	<main>

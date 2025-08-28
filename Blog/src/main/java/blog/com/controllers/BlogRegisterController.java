@@ -57,7 +57,7 @@ public class BlogRegisterController {
 		// そうでない場合は、画像のファイル名を所得
 		// 画像のアップロード
 		// もし、同じファイル名がない場合、保存処理
-		// 商品の一覧画面にリダイレクトする
+		// 記事の一覧画面にリダイレクトする
 		// そうでない場合、商品登録画面にとどまります。
 		if (account == null) {
 			return "redirect:/account/login";

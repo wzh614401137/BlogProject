@@ -78,7 +78,24 @@ public class HPService {
 		
 	}
 	
+	//削除処理のチェック
+	//もし、コントローラーからもらったblogIdがnullであれば
+	//削除できないこと false
+	//そうでない場合、
+	//deleteByBlogIdを使用してBlogの削除
+	//true
+	public boolean deleteBlog(Long blogId) {
+		if(blogId == null) {
+			return false;
+		}else {
+			blogDao.deleteByBlogId(blogId);
+			return true;
+		}
+	}
 	
-	
+	//検査機能
+	public List<Blog> searchBlogByKeyword(String keyword) {
+	    return blogDao.findByBlogTitleContainingOrArticleContaining(keyword, keyword);
+	}
 	
 }

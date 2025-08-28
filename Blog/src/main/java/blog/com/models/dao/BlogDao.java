@@ -28,6 +28,12 @@ public interface BlogDao extends JpaRepository<Blog, Long> {
 
 	// DLETE FROM blog WHERE blog_id = ?
 	// 用途：削除 ！！！@Transactional が宣言必要です
-	void deleteByBlogId(Long productId);
+	void deleteByBlogId(Long blogId);
+	
+	//  タイトル OR 本文のあいまい検索
+	//	SELECT * FROM blog 
+	//	WHERE (account_id = ? AND blog_title LIKE %?%) 
+	//	OR (account_id = ? AND article LIKE %?%);
+    List<Blog> findByBlogTitleContainingOrArticleContaining(String titleKeyword, String articleKeyword);
 
 }

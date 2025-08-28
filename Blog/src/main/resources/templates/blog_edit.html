@@ -70,9 +70,9 @@
 						<button class="back-btn" onclick="history.back();" type="button">戻る</button>
 					</div>
 				</form>
-				<form th:action="@{/product/delete}" method="post">
+				<form th:action="@{/blog/delete}" method="post">
 					<div class="register-section-details_flex">
-						<input type="hidden" name="productId" th:value="${blog.blogId}">
+						<input type="hidden" name="blogId" th:value="${blog.blogId}">
 						<button class="register">削除</button>
 					</div>
 				</form>
