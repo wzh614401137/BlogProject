@@ -51,11 +51,8 @@ public class BlogEditController {
 
 	// 更新処理
 	@PostMapping("/blog/edit/process")
-	public String blogUpdate(@RequestParam String blogTitle, 
-			@RequestParam String categoryName,
-			@RequestParam MultipartFile blogImage, 
-			@RequestParam String article, 
-			@RequestParam Long blogId) {
+	public String blogUpdate(@RequestParam String blogTitle, @RequestParam String categoryName,
+			@RequestParam MultipartFile blogImage, @RequestParam String article, @RequestParam Long blogId) {
 		// セッションからログインしている人の情報をaccountという変数に格納
 		Account account = (Account) session.getAttribute("loginAdminInfo");
 		// もし、account==null ログイン画面にリダイレクトする
@@ -78,9 +75,9 @@ public class BlogEditController {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			if(hpService.blogUpdate(blogId, blogTitle, categoryName, fileName, article, account.getAccountId())) {
+			if (hpService.blogUpdate(blogId, blogTitle, categoryName, fileName, article, account.getAccountId())) {
 				return "redirect:/blog/hp";
-			}else {
+			} else {
 				return "redirect:/blog/edit" + blogId;
 			}
 

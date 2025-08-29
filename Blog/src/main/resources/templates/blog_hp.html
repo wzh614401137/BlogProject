@@ -18,7 +18,7 @@
 		<nav class="pc">
 			<div class="pc-inner">
 				<div class="pc-logo">
-					<a href=""><img src="/images/logo.png" alt=""></a>
+					<a href=""><img src="/images/icon.png" alt=""></a>
 				</div>
 				<ul class="pc-list">
 					<li class="pc-list__item" th:text="${accountName}"></li>
@@ -28,8 +28,11 @@
 			</div>
 			<form action="/blog/search" method="get">
 			    <input type="text" name="keyword" placeholder="キーワードを入力">
-			    <button type="submit" class="btn btn--red btn--radius">検索</button>
+			    <button type="submit" class="btn btn--red btn--radius">検索から編集</button>
 			</form>
+			<div th:if="${param.message != null and param.message[0] eq 'notfound'}" class="error-message">
+			    該当するブログは見つかりませんでした。
+			</div>
 		</nav>
 	</header>
 	<main>
@@ -37,7 +40,7 @@
 			<h2>記事一覧</h2>
 			<section class="register-item">
 				<div class="all-view-register__button">
-					<a th:href="@{/blog/register}" class="btn btn--red btn--radius">記事登録</a>
+					<a th:href="@{/blog/register}" class="btn btn--red btn--radius">記事登録<div class="pc-logo"></div></a>
 				</div>
 			</section>
 			<ul class="products">

@@ -28,15 +28,13 @@ public class AccountService {
 	// ログインチェック用のメソッド メソッド名「loginCheck」
 	// もし、「emailとpasswordの組み合わせ:findByAccountEmailAndPassword」が存在していない場合、
 	// その場合、存在しないnullであることをコントローラクラスに知らせる
-	public Account loginCheck(String accountEmail,String password) {
+	public Account loginCheck(String accountEmail, String password) {
 		Account account = accountDao.findByAccountEmailAndPassword(accountEmail, password);
-		if(account == null) {
+		if (account == null) {
 			return null;
-		}else {
+		} else {
 			return account;
 		}
 	}
-	
-	
 
 }

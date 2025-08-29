@@ -43,10 +43,5 @@ public class AccountLoginController {
 			return "redirect:/blog/hp";
 		}
 	}
-	
 
-	
-	
-	
-	
 }

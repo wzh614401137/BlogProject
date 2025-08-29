@@ -23,16 +23,16 @@ public class BlogDeleteController {
 		// もし、account==null ログイン画面にリダイレクトする
 		if (account == null) {
 			return "redirect:/account/login";
-		}else {
-			//もし、deleteBlogの結果がtureだったら
-			if(hpService.deleteBlog(blogId)) {
-				//ブログ一覧ページにリダイレクトする
+		} else {
+			// もし、deleteBlogの結果がtureだったら
+			if (hpService.deleteBlog(blogId)) {
+				// ブログ一覧ページにリダイレクトする
 				return "redirect:/blog/hp";
-			}else {
-				//そうでない場合、編集画面にリダイレクトする
-				return "redirect:/blog/edit" + blogId;//------元の編集画面に戻ります--------
+			} else {
+				// そうでない場合、編集画面にリダイレクトする
+				return "redirect:/blog/edit" + blogId;// ------元の編集画面に戻ります--------
 			}
-				
+
 		}
 	}
 }

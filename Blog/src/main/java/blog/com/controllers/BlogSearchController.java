@@ -22,7 +22,7 @@ public class BlogSearchController {
 	@Autowired
 	private HttpSession session;
 
-	@GetMapping("/blog/search")
+	@GetMapping("/blog/search")//データの獲得を目的にするのものなので、Getメソッドを使います。
 	public String searchBlog(@RequestParam("keyword") String keyword, Model model) {
 
 		// セッションからログインしている人の情報をaccountという変数に格納
@@ -33,14 +33,14 @@ public class BlogSearchController {
 		} else {
 			List<Blog> blogs = hpService.searchBlogByKeyword(keyword);
 			if (blogs == null || blogs.isEmpty()) {
-				// 没有找到，回到列表页
-				return "redirect:/blog/hp";
-			}else {
-				// 找到 → 直接跳转到编辑页面
+				//該当するブログは見つからなかった場合、メッセージを表示し、リダイレクトする。
+				 return "redirect:/blog/hp?message=notfound";
+			} else {
+				// 見つかったら、編集画面にリダイレクトする。
 				Long blogId = blogs.get(0).getBlogId();
 				return "redirect:/blog/edit/" + blogId;
 			}
-			
+
 		}
 
 	}

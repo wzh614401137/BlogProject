@@ -51,22 +51,18 @@ public class HPService {
 	}
 
 	// 更新処理のチェック
-	//もし、productId==nullだったら、更新処理しない
-	//false
-	//そうでない場合、更新処理する
-	//コントローラークラスからもらった、productIdを使って、編集する前んのデータを取得
-	//変更すべきところだけ、セッターを使用してデータの更新をする
-	//trueを返す
-	public boolean blogUpdate(Long blogId,
-			String blogTitle,
-			String categoryName,
-			String blogImage,
-			String article,
+	// もし、productId==nullだったら、更新処理しない
+	// false
+	// そうでない場合、更新処理する
+	// コントローラークラスからもらった、productIdを使って、編集する前んのデータを取得
+	// 変更すべきところだけ、セッターを使用してデータの更新をする
+	// trueを返す
+	public boolean blogUpdate(Long blogId, String blogTitle, String categoryName, String blogImage, String article,
 			Long accountId) {
-		if(blogId == null) {
+		if (blogId == null) {
 			return false;
-		}else {
-			Blog blog = blogDao.findByBlogId(blogId);//blogIdが一致したら、データを取ってくる
+		} else {
+			Blog blog = blogDao.findByBlogId(blogId);// blogIdが一致したら、データを取ってくる
 			blog.setBlogTitle(blogTitle);
 			blog.setCategoryName(categoryName);
 			blog.setBlogImage(blogImage);
@@ -75,27 +71,27 @@ public class HPService {
 			blogDao.save(blog);
 			return true;
 		}
-		
+
 	}
-	
-	//削除処理のチェック
-	//もし、コントローラーからもらったblogIdがnullであれば
-	//削除できないこと false
-	//そうでない場合、
-	//deleteByBlogIdを使用してBlogの削除
-	//true
+
+	// 削除処理のチェック
+	// もし、コントローラーからもらったblogIdがnullであれば
+	// 削除できないこと false
+	// そうでない場合、
+	// deleteByBlogIdを使用してBlogの削除
+	// true
 	public boolean deleteBlog(Long blogId) {
-		if(blogId == null) {
+		if (blogId == null) {
 			return false;
-		}else {
+		} else {
 			blogDao.deleteByBlogId(blogId);
 			return true;
 		}
 	}
-	
-	//検査機能
+
+	// 検査機能
 	public List<Blog> searchBlogByKeyword(String keyword) {
-	    return blogDao.findByBlogTitleContainingOrArticleContaining(keyword, keyword);
+		return blogDao.findByBlogTitleContainingOrArticleContaining(keyword, keyword);
 	}
-	
+
 }
