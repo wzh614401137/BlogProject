@@ -59,10 +59,10 @@ Spring Bootを使用して開発した個人用ブログアプリです。ユー
 
 ## 🧭 ユースケース図
 
-- ユーザー登録・ログイン
+- ユーザー登録・ログイン・ログアウト
 - 投稿作成・編集・削除
-- 記事一覧・詳細表示
-- コメント投稿・削除
+<img width="521" height="540" alt="image" src="https://github.com/user-attachments/assets/981a9312-43b7-4358-bc77-e90cffd1349e" />
+
 
 > ※ draw.io や StarUML で作成した図を貼り付けてください
 
