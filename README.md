@@ -46,6 +46,7 @@ Spring Bootを使用して開発した個人用ブログアプリです。ユー
 
 - ログイン画面
 ![login](images/login.png)
+<img width="1078" height="684" alt="login" src="https://github.com/user-attachments/assets/bc00bbef-9c6d-4e9a-aed9-128bf030c168" />
 - 投稿一覧画面
 - 記事投稿フォーム
 - コメント表示部分
