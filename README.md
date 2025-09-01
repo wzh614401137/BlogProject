@@ -64,45 +64,42 @@ Spring Bootを使用して開発した個人用ブログアプリです。ユー
 <img width="521" height="540" alt="image" src="https://github.com/user-attachments/assets/981a9312-43b7-4358-bc77-e90cffd1349e" />
 
 
-> ※ draw.io や StarUML で作成した図を貼り付けてください
 
 ---
 
 ## 🗃 テーブル設計
 
 ```sql
--- users テーブル
-id            SERIAL PRIMARY KEY
-username      VARCHAR(50) UNIQUE NOT NULL
+--accountテーブル
+account_id    BIGINT PRIMARY KEY,
+account_name  VARCHAR(255) NOT NULL,
+account_email VARCHAR(255) NOT NULL UNIQUE,
 password      VARCHAR(255) NOT NULL
 
--- posts テーブル
-id            SERIAL PRIMARY KEY
-title         VARCHAR(100) NOT NULL
-content       TEXT NOT NULL
-author_id     BIGINT FOREIGN KEY (users.id)
-created_at    DATETIME
+-- blogテーブル
+blog_id       BIGINT PRIMARY KEY,
+blog_title    VARCHAR(255) NOT NULL,
+category_name VARCHAR(255) NOT NULL,
+blog_image    VARCHAR(255) NOT NULL,
+article       TEXT NOT NULL,
+account_id    BIGINT NOT NULL,
+CONSTRAINT    fk_account
+FOREIGN KEY   (account_id)
+REFERENCES    account(account_id)
 
--- comments テーブル
-id            SERIAL PRIMARY KEY
-content       TEXT
-post_id       BIGINT FOREIGN KEY (posts.id)
-user_id       BIGINT FOREIGN KEY (users.id)
-created_at    DATETIME
+
 ```
-
----
 
 ## 🌐 URL設計
 
-- `/register`：ユーザー登録画面（GET, POST）
-- `/login`：ログイン画面（GET, POST）
-- `/posts`：記事一覧（GET）
-- `/posts/new`：投稿フォーム（GET, POST）
-- `/posts/{id}`：記事詳細（GET）
-- `/posts/{id}/edit`：記事編集（GET, POST）
-- `/posts/{id}/delete`：記事削除（POST）
-- `/search?keyword=xxx`：記事検索（GET）
+- `/account/register`：ユーザー登録画面（GET, POST）
+- `/account/login`：ログイン画面（GET, POST）
+- `/account/logout`：ログアウト処理（GET）
+- `/blog/hp`：記事一覧（GET）
+- `/blog/register`：投稿フォーム（GET, POST）
+- `/blog/edit/{blogId}`：記事編集（GET, POST）
+- `/blog/delete`：記事削除（POST）
+- `/blog/search`：記事検索（GET）
 
 ---
 
