@@ -45,7 +45,7 @@ Spring Bootを使用して開発した個人用ブログアプリです。ユー
 > スクリーンショットを `images/` フォルダに追加し、以下に貼り付けてください
 
 - ログイン画面
-![login](/images/login.png)
+![login](images/login.png)
 - 投稿一覧画面
 - 記事投稿フォーム
 - コメント表示部分
