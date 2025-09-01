@@ -50,8 +50,10 @@ Spring Bootを使用して開発した個人用ブログアプリです。ユー
 - 記事一覧画面
 <img width="1888" height="932" alt="微信图片_20250901103036_9" src="https://github.com/user-attachments/assets/dc800592-75d4-4759-9b99-812964f61f85" />
 - 記事投稿フォーム
-<img width="1888" height="932" alt="微信图片_20250901103036_9" src="https://github.com/user-attachments/assets/f0674be9-c327-457b-9fe6-52117c32afa1" />
-- 
+<img width="1480" height="887" alt="微信图片_20250901103303_10" src="https://github.com/user-attachments/assets/63e47279-1007-4e2a-8db0-1dd5682d630f" />
+- 記事編集フォーム
+<img width="1480" height="887" alt="微信图片_20250901103303_10" src="https://github.com/user-attachments/assets/128b0c14-54ba-480a-865f-5703796b1e92" />
+
 
 ---
 
