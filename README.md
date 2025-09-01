@@ -139,8 +139,7 @@ src/
 
 ## 👤 作成者情報
 
-- 氏名：〇〇 〇〇
-- 所属：〇〇大学〇年
-- GitHub：[@ユーザー名](https://github.com/ユーザー名)
+- 氏名：オウ　シゴウ
+- GitHub：[@wzh614401137](https://github.com/wzh614401137)
 
 <p align="right">(<a href="#top">トップへ</a>)</p>
