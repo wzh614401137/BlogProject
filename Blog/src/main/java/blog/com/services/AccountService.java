@@ -12,11 +12,11 @@ public class AccountService {
 	private AccountDao accountDao;
 
 	// 保存処理(登録処理)
-	// もし、findByAdminEmail==nullだったら 登録します
-	// save メソッドを使用して登録処理をする
-	// 保存ができたっら true
-	// そうでない場合、 false
 	public boolean createAccount(String accountName, String accountEmail, String password) {
+		// もし、findByAdminEmail==nullだったら 登録します
+		// save メソッドを使用して登録処理をする
+		// 保存ができたっら true
+		// そうでない場合、 false
 		if (accountDao.findByAccountEmail(accountEmail) == null) {
 			accountDao.save(new Account(accountName, accountEmail, password));
 			return true;

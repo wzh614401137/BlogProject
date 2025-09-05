@@ -20,7 +20,7 @@ public class HPService {
 		if (accountId == null) {
 			return null;
 		} else {
-			return blogDao.findAll();
+			return blogDao.findByAccountId(accountId);
 		}
 	}
 
@@ -90,8 +90,11 @@ public class HPService {
 	}
 
 	// 検査機能
-	public List<Blog> searchBlogByKeyword(String keyword) {
-		return blogDao.findByBlogTitleContainingOrArticleContaining(keyword, keyword);
+	public List<Blog> searchBlogByKeyword(Long accountId, String keyword) {
+	    return blogDao.findByAccountIdAndBlogTitleContainingOrAccountIdAndArticleContaining(
+	            accountId, keyword,
+	            accountId, keyword);
 	}
+
 
 }

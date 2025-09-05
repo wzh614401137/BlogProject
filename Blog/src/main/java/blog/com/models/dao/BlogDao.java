@@ -17,6 +17,10 @@ public interface BlogDao extends JpaRepository<Blog, Long> {
 	// SELECT * FROM blog
 	// 用途：ブログの一覧を表示させるときに使用。
 	List<Blog> findAll();
+	
+	//SELECT * FROM blog WHERE account_id = ?
+	// 用途：Accountごとのblogを表示させる
+	List<Blog> findByAccountId(Long accountId);
 
 	// SELECT * FROM blog WHERE blog_title = ?
 	// 用途：記事の登録チェックに使用。
@@ -30,10 +34,13 @@ public interface BlogDao extends JpaRepository<Blog, Long> {
 	// 用途：削除 ！！！@Transactional が宣言必要です
 	void deleteByBlogId(Long blogId);
 	
-	//  タイトル OR 本文のあいまい検索
-	//	SELECT * FROM blog 
+	//	SELECT * 
+	//	FROM blog 
 	//	WHERE (account_id = ? AND blog_title LIKE %?%) 
 	//	OR (account_id = ? AND article LIKE %?%);
-    List<Blog> findByBlogTitleContainingOrArticleContaining(String titleKeyword, String articleKeyword);
+	List<Blog> findByAccountIdAndBlogTitleContainingOrAccountIdAndArticleContaining(
+	        Long accountId, String titleKeyword,
+	        Long accountId2, String articleKeyword);
+
 
 }

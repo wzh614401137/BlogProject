@@ -32,7 +32,7 @@ public class BlogSearchController {
 			return "redirect:/account/login";
 		} else {
 			//検査内容に関係あるのブログの情報を取得
-			List<Blog> blogs = hpService.searchBlogByKeyword(keyword);
+			List<Blog> blogs = hpService.searchBlogByKeyword(account.getAccountId(), keyword);
 			if (blogs == null || blogs.isEmpty()) {
 				//該当するブログは見つからなかった場合、メッセージを表示し、リダイレクトする。
 				 return "redirect:/blog/hp?message=notfound";
